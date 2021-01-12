@@ -6,3 +6,13 @@ case "$OSTYPE" in
   linux*)   echo "LINUX" ;;
   *)        echo "$OSTYPE not supported" ;;
 esac
+
+
+# Python Development
+
+PY_VER = 3.8.6
+
+pyenv virtuelenv $PY_VER pytools 
+pyenv activate pytools
+pip install black
+pyenv deactivate pytools
