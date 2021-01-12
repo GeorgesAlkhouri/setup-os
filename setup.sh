@@ -7,6 +7,15 @@ case "$OSTYPE" in
   *)        echo "$OSTYPE not supported" ;;
 esac
 
+# OS 
+
+brew install  pyenv \
+              neovim \
+              git \
+              git-flow \
+              tldr \
+              tmux \
+              
 
 # Python Development
 
