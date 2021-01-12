@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 case "$OSTYPE" in
   darwin*)  sudo xcode-select --install 
@@ -16,14 +17,23 @@ brew install  pyenv \
               tldr \
               tmux \
               
+## brew post install
+eval "$(command pyenv init -)"
+
+
 
 # Python Development
 
 PY_VER = 3.8.6
 
+$ git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
+eval "$(command pyenv virtualenv-init -)"
+
 pyenv virtuelenv $PY_VER pytools 
 pyenv activate pytools
 pip install black
-pyenv deactivate pytools
+pyenv deactivate
+
+pyenv virtuelenv $PY_VER pynvim
 
 # TODO add OS dependent stuff
