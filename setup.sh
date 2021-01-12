@@ -3,7 +3,7 @@ set -e
 set -x 
 case "$OSTYPE" in
   darwin*)   
-            /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/GeorgesAlkhouri/setup-os/HEAD/setup_mac.sh)"
+            /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/GeorgesAlkhouri/setup-os/HEAD/setup_mac.sh)" ;;
   linux*)   echo "LINUX" 
             exit 1
             /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" ;;
