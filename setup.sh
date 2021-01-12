@@ -2,10 +2,13 @@
 set -e
 
 case "$OSTYPE" in
-  darwin*)  sudo xcode-select --install 
+  darwin*)   
+            if ! [ -x "$(command -v xcode-select)" ]; then
+              sudo xcode-select --install  
+            fi
             /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" ;;
   linux*)   echo "LINUX" 
-            sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" ;;
+            /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" ;;
   *)        echo "$OSTYPE not supported" ;;
 esac
 
