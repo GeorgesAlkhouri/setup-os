@@ -25,3 +25,5 @@ pyenv virtuelenv $PY_VER pytools
 pyenv activate pytools
 pip install black
 pyenv deactivate pytools
+
+# TODO add OS dependent stuff
